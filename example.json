@@ -1,0 +1,230 @@
+{
+    "msg": "success",
+    "result": [
+        {
+            "label": "QuickPic",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFolder",
+            "sum": 27
+        },
+        {
+            "label": "QuickPic",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder_Mod.GalleryActivity",
+            "pkg": "com.alensw.PicFolder_Mod",
+            "sum": 1
+        },
+        {
+            "label": "QuickPic",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.quickpic",
+            "sum": 5
+        },
+        {
+            "label": "哔咔图片",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFoldes.GalleryActivity",
+            "pkg": "eu.chainfire.supersu.pro",
+            "sum": 1
+        },
+        {
+            "label": "图库",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFolder",
+            "sum": 3
+        },
+        {
+            "label": "图库",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder_Mod.GalleryActivity",
+            "pkg": "com.alensw.PicFolder_Mod",
+            "sum": 7
+        },
+        {
+            "label": "图库",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFoldes.GalleryActivity",
+            "pkg": "com.alensw.PicFoldes",
+            "sum": 2
+        },
+        {
+            "label": "图库",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.quickpic",
+            "sum": 6
+        },
+        {
+            "label": "快图",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFolder",
+            "sum": 52
+        },
+        {
+            "label": "快图",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFoldes.GalleryActivity",
+            "pkg": "com.alensw.PicFolder",
+            "sum": 1
+        },
+        {
+            "label": "快图",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFoldes",
+            "sum": 1
+        },
+        {
+            "label": "快图浏览",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFold",
+            "sum": 1
+        },
+        {
+            "label": "快图浏览",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFolder",
+            "sum": 703
+        },
+        {
+            "label": "快图浏览",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolderq.GalleryActivity",
+            "pkg": "com.alensw.PicFolderq",
+            "sum": 1
+        },
+        {
+            "label": "快图浏览",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder_Mod.GalleryActivity",
+            "pkg": "com.alensw.PicFolder_Mod",
+            "sum": 9
+        },
+        {
+            "label": "快图浏览",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFoldes.GalleryActivity",
+            "pkg": "com.alensw.PicFoldes",
+            "sum": 2
+        },
+        {
+            "label": "快图浏览",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.quickpic",
+            "sum": 201
+        },
+        {
+            "label": "快图浏览",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.quickpid",
+            "sum": 1
+        },
+        {
+            "label": "快图浏览5",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFolder5",
+            "sum": 1
+        },
+        {
+            "label": "快圖",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFolder",
+            "sum": 3
+        },
+        {
+            "label": "快圖瀏覽",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFolder",
+            "sum": 7
+        },
+        {
+            "label": "快圖瀏覽",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.quickpic",
+            "sum": 4
+        },
+        {
+            "label": "照片",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFolder",
+            "sum": 2
+        },
+        {
+            "label": "相册",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.PicFolder",
+            "sum": 15
+        },
+        {
+            "label": "相册",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFoldes.GalleryActivity",
+            "pkg": "com.alensw.PicFoldes",
+            "sum": 1
+        },
+        {
+            "label": "相册",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.quickpic",
+            "sum": 1
+        },
+        {
+            "label": "相册",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.QuickPic.GalleryActivity",
+            "pkg": "com.alensw.QuickPic",
+            "sum": 2
+        },
+        {
+            "label": "相册",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.android.gallery3d",
+            "sum": 1
+        },
+        {
+            "label": "相册",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.contain.PicFolder",
+            "sum": 12
+        },
+        {
+            "label": "相册",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.hellocxj.PicFolder",
+            "sum": 3
+        },
+        {
+            "label": "相册-副本",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFoldes.GalleryActivity",
+            "pkg": "com.alensw.PicFoldes",
+            "sum": 1
+        },
+        {
+            "label": "看图",
+            "labelEn": "QuickPic",
+            "launcher": "com.alensw.PicFolder.GalleryActivity",
+            "pkg": "com.alensw.quickpic",
+            "sum": 1
+        }
+    ],
+    "status": 0
+}
