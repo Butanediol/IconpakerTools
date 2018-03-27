@@ -1,7 +1,39 @@
 # -*- coding: utf-8 -*-
-
 import xml.etree.ElementTree as XET
 import os
+import json as JS
+from urllib.request import urlopen
+
+def getInfo(appName):
+
+	# appName = input('请输入应用名')
+	appNameLink = 'http://nano.by-syk.com:8083/code/' + appName
+	appNameURL = urlopen(appNameLink)
+	apiResponsed = JS.loads(appNameURL.read().decode('utf-8'))
+
+	num = 0
+	for i in apiResponsed['result']:
+		print('第',num+1,'个结果：')
+		print('应用名称 ',apiResponsed['result'][num]['label'])
+		print('英文名称 ',apiResponsed['result'][num]['labelEn'])
+		print('应用包名 ',apiResponsed['result'][num]['pkg'])
+		print('启动项名 ',apiResponsed['result'][num]['launcher'])
+		print('申请数量 ',apiResponsed['result'][num]['sum'])
+		appfilterCode = '''应用代码  <item component="ComponentInfo{'''
+		appfilterCode += apiResponsed['result'][num]['pkg']
+		appfilterCode += '/'
+		appfilterCode += apiResponsed['result'][num]['launcher']
+		appfilterCode += '''" drawable="'''
+		appfilterCode += appName
+		appfilterCode += '''" />'''
+		print(appfilterCode,'\n')
+		num += 1
+	if num == 0:
+		f.write('未知应用:')
+		f.write(appName)
+		f.write('\n')
+		print('Unknown app:',appName)
+
 path = input()
 files = os.listdir(path) #文件列表
 filesCode = str(path)+'/code.xml' #xml文件路径
@@ -57,17 +89,14 @@ for child in xmlRoot:
 		f.write('\n')
 		# 输出图标名
 		# print('图标名 ',childAttributionIconName)
-		print('属性 ',childAttribution)
+		# print('属性 ',childAttribution)
 		f.write('图标名 ')
 		f.write(childAttributionIconName)
 		f.write('\n\n')
 
-
-
-
-
-	# print('\nchild-tag是：',child.tag,'\nchild.attrib：',child.attrib,'\nchild.text：',child.text)
-# 	for sub in child:
-# 		print('\nsub-tag是：',sub.tag,'\nsub.attrib：',sub.attrib,'\nsub.text：',sub.text)
+for file in files:
+	if (file != '.DS_Store') & (file != 'code.xml'):
+		print('当前文件:',file[:-4])
+		getInfo(file[:-4])
 
 f.close() 		
