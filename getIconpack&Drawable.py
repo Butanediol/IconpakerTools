@@ -27,6 +27,8 @@ def getInfo(appName):
 		appfilterCode += appName
 		appfilterCode += '''" />'''
 		print(appfilterCode,'\n')
+		f.write(appfilterCode)
+		f.write('\n')
 		num += 1
 	if num == 0:
 		f.write('未知应用:')
