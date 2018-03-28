@@ -3,7 +3,7 @@
 
 目前实现的功能：
 - 根据目录下的文件生成对应的Drawable.xml和Iconpack.xml(NanoIconPack)
-- 联网查询Appfilter(感谢@By-syk)
+- 联网查询Appfilter(感谢@By-syk)并导出到文件
 
 目标功能：
 - 全自动生成Drawable.xml\Iconpack.xml\Appfilter.xml
