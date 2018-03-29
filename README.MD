@@ -1,6 +1,8 @@
 # Iconpacker Tools
 一个给图标包作者用的小工具
 
+> 去[Wiki](https://github.com/TucaoNico/IconpakerTools/wiki/开始)查看使用说明
+
 目前实现的功能：
 - 根据目录下的文件生成对应的Drawable.xml和Iconpack.xml(NanoIconPack)
 - 联网查询Appfilter(感谢@By-syk)并导出到文件
