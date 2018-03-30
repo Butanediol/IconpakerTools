@@ -15,3 +15,8 @@ needAppfilterXml = False
 
 # 是否生成主题图标文件（未开工）
 needXUIIconFile = False
+
+#------以下是getAppfilter.py的配置------#
+
+# 循环模式，直到不输入任何内容直接回车才停止
+infiniteLoop = True
