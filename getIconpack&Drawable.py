@@ -2,8 +2,10 @@
 import xml.etree.ElementTree as XET
 import os
 import json as JS
+import config as CF
 from urllib.request import urlopen
 
+# 输出Appfilter
 def getInfo(appName):
 
 	# appName = input('请输入应用名')
@@ -29,6 +31,8 @@ def getInfo(appName):
 		print(appfilterCode,'\n')
 		f.write(appfilterCode)
 		f.write('\n')
+		if num >=10 :
+			break
 		num += 1
 	if num == 0:
 		f.write('未知应用:')
@@ -36,6 +40,57 @@ def getInfo(appName):
 		f.write('\n')
 		print('Unknown app:',appName)
 
+# 输出Iconpack.xml
+def exportIconpack():
+	for file in files:
+		if (file != '.DS_Store') & (file != 'code.xml'):
+			f.write('<item>')
+			f.write(file[:-4])
+			f.write('</item>')
+			f.write('\n')
+
+# 输出Drawable
+def exportDrawable():
+	for file in files:
+		if (file != '.DS_Store') & (file != 'code.xml'):
+			f.write('''<item drawable="''')
+			f.write(file[:-4])
+			f.write('''" />''')
+			f.write('\n')
+
+# 处理Appfilter.xml
+def analyseAppfilter():
+	appfilterFileLocation = str(path)+'/appfilter.xml'
+	xmlTree = XET.parse(appfilterFileLocation)
+	xmlRoot = xmlTree.getroot()
+	childAttribution = ''
+	childAttributionPackageName = ''
+	childAttributionLaunchActivity = ''
+	childAttributionIconName = ''
+	print('\nxmlRoot.tag:',xmlRoot.tag,'\nxmlRoot.attrib:',xmlRoot.attrib,'\nxmlRoot.text:',xmlRoot.text)
+	for child in xmlRoot:
+		if child.tag == 'item':
+			childAttribution = str(child.attrib)
+			# print(childAttribution)
+			childAttributionPackageName = childAttribution[29:childAttribution.index('/')] # 获取包名
+			childAttributionLaunchActivity = childAttribution[childAttribution.index('/')+1:childAttribution.index('}')] #获取启动项
+			childAttributionIconName = childAttribution[childAttribution.index('}')+17:childAttribution.index("'}")] # 获取图标名
+			# print('包名是 ',childAttributionPackageName)
+			# 输出包名
+			f.write('包名是 ')
+			f.write(childAttributionPackageName)
+			f.write('\n')
+			# 输出启动项
+			f.write('启动项 ')
+			f.write(childAttributionLaunchActivity)
+			f.write('\n')
+			# 输出图标名
+			# print('图标名 ',childAttributionIconName)
+			# print('属性 ',childAttribution)
+			f.write('图标名 ')
+			f.write(childAttributionIconName)
+			f.write('\n\n')
+	
 path = input()
 files = os.listdir(path) #文件列表
 filesCode = str(path)+'/code.xml' #xml文件路径
@@ -45,60 +100,22 @@ f = open(filesCode,'w')
 
 files.sort()
 
-for file in files:
-	if (file != '.DS_Store') & (file != 'code.xml'):
-		f.write('<item>')
-		f.write(file[:-4])
-		f.write('</item>')
-		f.write('\n')
+if CF.needIconpackXml:
+	exportIconpack()
+	f.write('\n')
 
-f.write('\n')
+if CF.needDrawableXml:
+	exportDrawable()
+	f.write('\n')
 
-for file in files:
-	if (file != '.DS_Store') & (file != 'code.xml'):
-		f.write('''<item drawable="''')
-		f.write(file[:-4])
-		f.write('''" />''')
-		f.write('\n')
+if CF.needXUIIconFile:
+	analyseAppfilter()
+	f.write('\n')
 
-f.write('\n')
-
-# 接下来是xml文件
-
-appfilterFileLocation = str(path)+'/appfilter.xml'
-xmlTree = XET.parse(appfilterFileLocation)
-xmlRoot = xmlTree.getroot()
-childAttribution = ''
-childAttributionPackageName = ''
-childAttributionLaunchActivity = ''
-childAttributionIconName = ''
-print('\nxmlRoot.tag:',xmlRoot.tag,'\nxmlRoot.attrib:',xmlRoot.attrib,'\nxmlRoot.text:',xmlRoot.text)
-for child in xmlRoot:
-	if child.tag == 'item':
-		childAttribution = str(child.attrib)
-		# print(childAttribution)
-		childAttributionPackageName = childAttribution[29:childAttribution.index('/')] # 获取包名
-		childAttributionLaunchActivity = childAttribution[childAttribution.index('/')+1:childAttribution.index('}')] #获取启动项
-		childAttributionIconName = childAttribution[childAttribution.index('}')+17:childAttribution.index("'}")] # 获取图标名
-		# print('包名是 ',childAttributionPackageName)
-		# 输出包名
-		f.write('包名是 ')
-		f.write(childAttributionPackageName)
-		f.write('\n')
-		# 输出启动项
-		f.write('启动项 ')
-		f.write(childAttributionLaunchActivity)
-		f.write('\n')
-		# 输出图标名
-		# print('图标名 ',childAttributionIconName)
-		# print('属性 ',childAttribution)
-		f.write('图标名 ')
-		f.write(childAttributionIconName)
-		f.write('\n\n')
-
-for file in files:
-	if (file != '.DS_Store') & (file != 'code.xml'):
-		print('当前文件:',file[:-4])
-		getInfo(file[:-4])
+if CF.needAppfilterXml:
+	for file in files:
+		if (file != '.DS_Store') & (file != 'code.xml'):
+			print('当前文件:',file[:-4])
+			getInfo(file[:-4])
 
 f.close() 		
