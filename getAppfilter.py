@@ -3,7 +3,13 @@ from urllib.request import urlopen
 from pprint import pprint
 import _thread
 import config as CF
+import os
 
+os.system('mkdir output')
+f = open('getAppfilter.xml','w')
+def writeFile(theString):
+	f.write(theString)
+	f.write('\n')
 def getInfo(appName):
 
 	# appName = input('请输入应用名')
@@ -27,15 +33,18 @@ def getInfo(appName):
 		appfilterCode += appName
 		appfilterCode += '''" />'''
 		print(appfilterCode,'\n')
+		writeFile(appfilterCode[6:])
 		num += 1
 
 if CF.infiniteLoop:
 	cntinue = True
 	while cntinue:
-		getName = input('请输入应用名/包名(输入#停止)')
+		getName = input('请输入应用名/包名(输入#停止):')
 		if getName == '#':
 			break
 		getInfo(getName)
 else:
-	getName = input('请输入应用名/包名')
+	getName = input('请输入应用名/包名:')
 	getInfo(getName)
+
+print('所有代码已经保存在getAppfilter.xml文件里，程序退出')
