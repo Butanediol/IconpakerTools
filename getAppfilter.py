@@ -3,9 +3,7 @@ from urllib.request import urlopen
 from pprint import pprint
 import _thread
 import config as CF
-import os
 
-os.system('mkdir output')
 f = open('getAppfilter.xml','w')
 def writeFile(theString):
 	f.write(theString)
