@@ -11,7 +11,11 @@ needIconpackXml = True
 needDrawableXml = True
 
 # 是否联网获取Appfilter.xml
-needAppfilterXml = False
+needAppfilterXml = True
+
+# 设置搜索结果上限(<=128)
+# 对 index.py 和 getAppfilter.py 同时使用（LoopMode）
+maxResults = 10
 
 # 是否生成主题图标文件（未开工）
 needXUIIconFile = False

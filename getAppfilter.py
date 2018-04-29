@@ -1,5 +1,6 @@
 import json as JS
 from urllib.request import urlopen
+from urllib.request import quote
 from pprint import pprint
 import _thread
 import config as CF
@@ -11,12 +12,18 @@ def writeFile(theString):
 def getInfo(appName):
 
 	# appName = input('请输入应用名')
-	appNameLink = 'http://nano.by-syk.com:8083/code/' + appName
+	# appNameLink = 'http://nano.by-syk.com:8083/code/' + appName
+	quotedAppName = quote(appName)
+	print(quotedAppName)
+	appNameLink = 'http://gxicon.e123.pw/code/' + quotedAppName
 	appNameURL = urlopen(appNameLink)
 	apiResponsed = JS.loads(appNameURL.read().decode('utf-8'))
 
 	num = 0
 	for i in apiResponsed['result']:
+		# 搜索结果上限
+		if num >= CF.maxResults:
+			break
 		print('第',num+1,'个结果：')
 		print('应用名称 ',apiResponsed['result'][num]['label'])
 		print('英文名称 ',apiResponsed['result'][num]['labelEn'])
@@ -27,7 +34,7 @@ def getInfo(appName):
 		appfilterCode += apiResponsed['result'][num]['pkg']
 		appfilterCode += '/'
 		appfilterCode += apiResponsed['result'][num]['launcher']
-		appfilterCode += '''" drawable="'''
+		appfilterCode += '''}" drawable="'''
 		appfilterCode += appName
 		appfilterCode += '''" />'''
 		print(appfilterCode,'\n')
@@ -35,8 +42,8 @@ def getInfo(appName):
 		num += 1
 
 if CF.infiniteLoop:
-	cntinue = True
-	while cntinue:
+	cnt = 1
+	while True:
 		getName = input('请输入应用名/包名(输入#停止):')
 		if getName == '#':
 			break

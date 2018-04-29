@@ -9,7 +9,8 @@ from urllib.request import urlopen
 def getInfo(appName):
 
 	# appName = input('请输入应用名')
-	appNameLink = 'http://nano.by-syk.com:8083/code/' + appName
+	# appNameLink = 'http://nano.by-syk.com:8083/code/' + appName
+	appNameLink = 'http://gxicon.e123.pw/code/' + appName
 	appNameURL = urlopen(appNameLink)
 	apiResponsed = JS.loads(appNameURL.read().decode('utf-8'))
 
@@ -25,13 +26,13 @@ def getInfo(appName):
 		appfilterCode += apiResponsed['result'][num]['pkg']
 		appfilterCode += '/'
 		appfilterCode += apiResponsed['result'][num]['launcher']
-		appfilterCode += '''" drawable="'''
+		appfilterCode += '''}" drawable="'''
 		appfilterCode += appName
 		appfilterCode += '''" />'''
 		print(appfilterCode,'\n')
 		f.write(appfilterCode)
 		f.write('\n')
-		if num >=10 :
+		if num >=CF.maxResults :
 			break
 		num += 1
 	if num == 0:
