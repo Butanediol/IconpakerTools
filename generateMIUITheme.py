@@ -28,6 +28,8 @@ def analyseAppfilter():
 				counts += 1
 	print('\n' + str(counts) + ' in total.')
 
-path = input('Please input the dir path.\n')
+# path = input('')
+print("Please input the dir path.")
+path = input('Appfilter.xml must included.\n')
 os.system('mkdir ' + path + '/output')
 analyseAppfilter()
